@@ -1,9 +1,11 @@
 /* Reset and base styles */
 body {
   margin: 0;
-  background: #000;
+  font-family: 'League Spartan', sans-serif;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(50,50,50,0.8));
   color: #fff;
-  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -41,8 +43,10 @@ header p {
 
 /* Card Styling */
 .card {
-  background: #111;
-  border: 1px solid #444;
+  background: rgba(255, 255, 255, 0.05); /* transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(255,255,255,0.05);
   overflow: hidden;
@@ -162,7 +166,7 @@ footer {
   cursor: pointer;
   z-index: 10;
   position: absolute;
-  bottom: 13px;                  /* move them lower */
+  bottom: 20px;                  /* move them lower */
   transform: translateY(50%);
 }
 
