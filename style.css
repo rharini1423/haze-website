@@ -13,6 +13,16 @@ h1, h2, header p {
   font-family: 'League Spartan', sans-serif;
 }
 
+.tagline {
+  font-size: 2rem;
+  font-family: 'League Spartan', sans-serif;
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+  text-align: center;
+  color: white;
+}
+
+
 
 /* Header
 header {
@@ -43,15 +53,18 @@ header p {
 
 /* Card Styling */
 .card {
-  background: rgba(255, 255, 255, 0.05); /* transparent white */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(255,255,255,0.05);
   overflow: hidden;
   transition: transform 0.2s, border 0.3s;
+  aspect-ratio: 1 / 1; /* <- makes it a square */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 .card:hover {
   transform: scale(1.02);
@@ -92,8 +105,11 @@ header p {
 footer {
   padding: 1.5rem;
   font-size: 0.9rem;
-  background: #000;
-  color: #777;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .image-carousel {
@@ -158,16 +174,16 @@ footer {
 
 
 .carousel-btn {
-  font-size: 1.5rem;             /* smaller */
-  background: rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   border: none;
-  padding: 0.4rem 0.7rem;
-  cursor: pointer;
-  z-index: 10;
+  padding: 0.4rem 0.8rem;
   position: absolute;
-  bottom: 20px;                  /* move them lower */
+  bottom: 30%;  /* 🔼 move higher up from the bottom */
   transform: translateY(50%);
+  z-index: 10;
+  border-radius: 6px;
 }
 
 .carousel-btn.left { left: 10px; }
@@ -175,7 +191,7 @@ footer {
 
 
 .carousel-btn:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
 }
 
 
