@@ -7,7 +7,13 @@ body {
   text-align: center;
 }
 
-/* Header */
+
+h1, h2, header p {
+  font-family: 'League Spartan', sans-serif;
+}
+
+
+/* Header
 header {
   padding: 2rem;
   background: #111;
@@ -24,7 +30,7 @@ header p {
   margin: 0.5rem 0 0;
   font-size: 1rem;
   color: #ccc;
-}
+} */
 
 /* Grid Layout */
 .grid {
@@ -87,7 +93,7 @@ footer {
   color: #777;
 }
 
-/* .image-carousel {
+.image-carousel {
   width: 100%;
   height: 280px;
   position: relative;
@@ -97,9 +103,9 @@ footer {
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;
-} */
+}
 
-.image-carousel {
+/* .image-carousel {
   width: 100%;
   height: 280px;
   position: relative;
@@ -111,7 +117,7 @@ footer {
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;
-}
+} */
 
 
 
@@ -145,7 +151,7 @@ footer {
   cursor: pointer;
   z-index: 10;
   position: absolute;
-  bottom: 15px;                  /* move them lower */
+  bottom: 13px;                  /* move them lower */
   transform: translateY(50%);
 }
 
