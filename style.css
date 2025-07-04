@@ -22,6 +22,19 @@ h1, h2, header p {
   color: white;
 }
 
+header {
+  margin-bottom: 0;  /* Or something like 0.5rem */
+  padding-bottom: 0;
+}
+
+.logo {
+  margin-bottom: 0.5rem; /* Reduce this if too big */
+}
+
+h2 {
+  margin-top: 0.5rem;  /* Reduce gap from logo */
+}
+
 
 
 /* Header
@@ -44,25 +57,36 @@ header p {
 } */
 
 /* Grid Layout */
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+} */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
 }
 
 /* Card Styling */
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #444;
+  width: 280px;                 /* fixed width to match image */
+  height: 380px;                /* square (280) + space for text/buttons */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.05);
-  overflow: hidden;
-  transition: transform 0.2s, border 0.3s;
-  aspect-ratio: 1 / 1; /* <- makes it a square */
+  border: 1px solid rgba(255,255,255,0.1);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  padding-bottom: 1rem;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05);
+  transition: transform 0.2s;
 }
 
 
@@ -113,15 +137,16 @@ footer {
 }
 
 .image-carousel {
+  width: 100%;
+  height: 280px;         /* exact square image area */
   position: relative;
-  height: 280px; /* 👈 Fix this to a constant height */
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: url("assets/testwallpaper.jpg") no-repeat center center;
-  background-size: cover;
-  border-radius: 12px;
+  align-items: center;
   overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: #000;
 }
 
 
@@ -150,10 +175,9 @@ footer {
 }
 
 
-
 .image-carousel img {
-  max-height: 90%; /* instead of 100% */
-  max-width: 90%;  /* 👈 Add this */
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   position: relative;
   z-index: 1;
