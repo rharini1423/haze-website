@@ -16,17 +16,23 @@
   <main class="grid">
     <div class="card">
     <div class="image-carousel" data-index="0">
-        <img src="assests\luffy1.png" alt="Luffy - View 1">
-        <img src="assests\luffy2.png" alt="Luffy - View 2" style="display: none;">
-        <img src="assests\luffy4.png" alt="Luffy - View 3" style="display: none;">
+        <button class="carousel-btn left">&#8592;</button>
+        <img src="assests\luffy6.png" alt="Luffy - View 1">
+        <img src="assests\luffy1.png" alt="Luffy - View 2" style="display: none;">
+        <img src="assests\luufy5.png" alt="Luffy - View 3" style="display: none;">
+        <img src="assests\luffy2.png" alt="Luffy - View 4" style="display: none;">
+        <img src="assests\luffy4.png" alt="Luffy - View 5" style="display: none;">
+        <button class="carousel-btn right">&#8594;</button>
     </div>
     <h2>Gear 5 Luffy</h2>
     <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
     </div>
     <div class="card">
     <div class="image-carousel" data-index="0">
-        <img src="assests\valentines1.png" alt="Furever love - View 1">
+        <button class="carousel-btn left">&#8592;</button>
+        <img src="assests\valentineee1.png" alt="Furever love - View 1">
         <img src="assests\valentines2.png" alt="Furever love - View 2" style="display: none;">
+        <button class="carousel-btn right">&#8594;</button>
         <!-- <img src="assests\luffy4.png" alt="Too tall to care - View 3" style="display: none;"> -->
     </div>
     <h2>Furever</h2>
@@ -34,8 +40,10 @@
     </div>
     <div class="card">
     <div class="image-carousel" data-index="0">
+        <button class="carousel-btn left">&#8592;</button>
         <img src="assests\broken1.png" alt="Broken - View 1">
         <img src="assests\broken2.png" alt="Broken - View 2" style="display: none;">
+        <button class="carousel-btn right">&#8594;</button>
         <!-- <img src="assests\luffy4.png" alt="Too tall to care - View 3" style="display: none;"> -->
     </div>
     <h2>Broken</h2>
@@ -43,18 +51,22 @@
     </div>
     <div class="card">
     <div class="image-carousel" data-index="0">
-        <img src="assests\tootalltocare.png" alt="Too tall to care - View 1">
+        <button class="carousel-btn left">&#8592;</button>
+        <img src="assests\tootalltocare3.png" alt="Too tall to care - View 1">
         <img src="assests\tootalltocare2.png" alt="Too tall to care - View 2" style="display: none;">
+        <button class="carousel-btn right">&#8594;</button>
         <!-- <img src="assets/tootalltocare3.png" alt="Too tall to care - View 3" style="display: none;"> -->
     </div>
-    <h2>Too tall to care Tee</h2>
+    <h2>Too tall to care</h2>
     <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
     </div>
     <div class="card">
     <div class="image-carousel" data-index="0">
+        <button class="carousel-btn left">&#8592;</button>
         <img src="assests\faith1.png" alt="Faith - View 1">
         <img src="assests\faith2.jpeg" alt="Faith - View 2" style="display: none;">
         <img src="assests\faith3.png" alt="Faith- View 3" style="display: none;">
+        <button class="carousel-btn right">&#8594;</button>
     </div>
     <h2>Faith</h2>
     <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
@@ -68,15 +80,33 @@
   </footer>
 <script>
   document.querySelectorAll(".image-carousel").forEach(carousel => {
-    const imgs = carousel.querySelectorAll("img");
+    const imgs = carousel.querySelectorAll(".carousel-img");
+    const leftBtn = carousel.querySelector(".left");
+    const rightBtn = carousel.querySelector(".right");
     let index = 0;
-    carousel.addEventListener("click", () => {
-      imgs[index].style.display = "none";
-      index = (index + 1) % imgs.length;
-      imgs[index].style.display = "block";
+
+    const updateImage = () => {
+      imgs.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+    };
+
+    leftBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      index = (index - 1 + imgs.length) % imgs.length;
+      updateImage();
     });
+
+    rightBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      index = (index + 1) % imgs.length;
+      updateImage();
+    });
+
+    updateImage(); // Show the first image initially
   });
 </script>
+
 
 </body>
 </html>

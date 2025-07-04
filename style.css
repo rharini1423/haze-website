@@ -90,16 +90,15 @@ footer {
 .image-carousel {
   width: 100%;
   height: 280px;
-  background: rgba(0, 0, 0, 0.4); /* transparent black */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  position: relative;
+  background: url('assests\testwallpaper.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
 }
+
 
 
 .image-carousel img {
@@ -110,9 +109,40 @@ footer {
   mix-blend-mode: lighten;
 }
 
+.carousel-img {
+  max-height: 100%;
+  width: auto;
+  display: none;
+  object-fit: contain;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 
 .logo {
-  width: 100px;
+  width: 200px;
   margin-bottom: 1rem;
   display: block;
   margin-left: auto;
