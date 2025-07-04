@@ -138,7 +138,7 @@ footer {
 
 .image-carousel {
   width: 100%;
-  height: 280px;         /* exact square image area */
+  height: 280px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -146,7 +146,10 @@ footer {
   overflow: hidden;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  background: #000;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(50,50,50,0.8));
+  color: #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
