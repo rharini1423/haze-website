@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
-    <h1>H'aze</h1>
-    <p>Anime-Inspired Apparel & Accessories</p>
-  </header>
+ <header>
+  <img src="assests\whitelogo.png" alt="Haze Logo" class="logo" />
+  <!-- <h1>H'aze</h1> -->
+  <p>Anime-Inspired Apparel & Accessories</p>
+</header>
 
   <main class="grid">
     <div class="card">
@@ -65,5 +66,17 @@
   <footer>
     <p>© 2025 H'aze. For the Ones Who Get It.</p>
   </footer>
+<script>
+  document.querySelectorAll(".image-carousel").forEach(carousel => {
+    const imgs = carousel.querySelectorAll("img");
+    let index = 0;
+    carousel.addEventListener("click", () => {
+      imgs[index].style.display = "none";
+      index = (index + 1) % imgs.length;
+      imgs[index].style.display = "block";
+    });
+  });
+</script>
+
 </body>
 </html>

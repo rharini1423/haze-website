@@ -86,3 +86,28 @@ footer {
   background: #000;
   color: #777;
 }
+
+/* For equal image sizing and black tee visibility */
+.image-carousel {
+  width: 100%;
+  height: 280px;
+  background-color: #f0f0f0; /* light gray background to highlight dark tees */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-carousel img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 1rem;
+  filter: invert(100%);
+}
