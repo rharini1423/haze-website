@@ -1,0 +1,88 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* Header */
+header {
+  padding: 2rem;
+  background: #111;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Card Styling */
+.card {
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05);
+  overflow: hidden;
+  transition: transform 0.2s, border 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border: 1px solid #fff;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h2 {
+  margin: 0.8rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Button */
+.dm-btn {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.dm-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: #000;
+  color: #777;
+}
