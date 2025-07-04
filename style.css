@@ -94,15 +94,16 @@ footer {
 
 .image-carousel {
   position: relative;
-  overflow: hidden;
-  background: url("assests/testwallpaper.jpg") no-repeat center center;
-  background-size: cover;
-  border-radius: 12px;
-  min-height: 280px;
+  height: 280px; /* 👈 Fix this to a constant height */
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url("assets/testwallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
 }
+
 
 
 
@@ -131,11 +132,12 @@ footer {
 
 
 .image-carousel img {
-  max-height: 100%;
-  width: auto;
+  max-height: 90%; /* instead of 100% */
+  max-width: 90%;  /* 👈 Add this */
   object-fit: contain;
-  transition: opacity 0.3s;
+  position: relative;
   z-index: 1;
+  display: none;
 }
 
 
@@ -148,6 +150,7 @@ footer {
 .carousel-img.active {
   display: block;
 }
+
 
 
 .carousel-btn {
