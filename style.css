@@ -13,28 +13,28 @@ h1, h2, header p {
   font-family: 'League Spartan', sans-serif;
 }
 
-.tagline {
-  font-size: 2rem;
-  font-family: 'League Spartan', sans-serif;
-  margin-top: 2rem;
-  margin-bottom: -1rem;
-  text-align: center;
-  color: white;
+header img {
+  margin-bottom: 0.5rem;  /* reduce logo's bottom space */
 }
 
-header {
-  margin-bottom: 0;  /* Or something like 0.5rem */
-  padding-bottom: 0;
+h2 {
+  margin-top: 0;          /* remove top gap for "Creative Streetwear" */
 }
+
+
+.tagline {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+
+
 
 .logo {
   margin-bottom: 0.5rem; /* Reduce this if too big */
 }
-
-h2 {
-  margin-top: 0.5rem;  /* Reduce gap from logo */
-}
-
 
 
 /* Header
@@ -74,20 +74,17 @@ header p {
 
 /* Card Styling */
 .card {
-  width: 280px;                 /* fixed width to match image */
-  height: 380px;                /* square (280) + space for text/buttons */
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(50,50,50,0.8));
+  color: #fff;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #444;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 1rem;
   box-shadow: 0 0 12px rgba(255,255,255,0.05);
-  transition: transform 0.2s;
+  overflow: hidden;
+  transition: transform 0.2s, border 0.3s;
 }
+
 
 
 .card:hover {
@@ -146,10 +143,7 @@ footer {
   overflow: hidden;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(50,50,50,0.8));
-  color: #fff;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: inherit; /* inherit glass from parent card */
 }
 
 
