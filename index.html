@@ -97,7 +97,7 @@
       <h2>Faith</h2>
       <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
     </div>
-    <div class="card oversized">
+    <div class="card oversized hidden ">
       <div class="image-carousel" data-index="0">
         <button class="carousel-btn left">&#8592;</button>
         <img src="assests\luffy1.png" alt="Faith - View 1" class="carousel-img active">
@@ -111,7 +111,7 @@
   <!-- Gear 5 Luffy oversized tee -->
 </div>
 
-<div class="card crop">
+<div class="card crop hidden">
   <div class="image-carousel" data-index="0">
         <button class="carousel-btn left">&#8592;</button>
         <img src="assests\valentines2.png" alt="Faith - View 1" class="carousel-img active">
@@ -173,26 +173,32 @@
       toggleSidebar(); // close after click
     }
   </script>
-  <script>
-    document.addEventListener("keydown", function (e) {
-  if (e.key.toLowerCase() === "h") {
-    for (let i = 0; i < 12; i++) {
-      const d = document.createElement("div");
-      d.classList.add("dandelion");
-      d.innerText = "🌬️"; // You can also try ❃ or 🕊️ or a custom SVG
-      d.style.left = Math.random() * 100 + "vw";
-      d.style.fontSize = 1.2 + Math.random() * 2 + "rem";
-      d.style.animationDuration = 4 + Math.random() * 3 + "s";
-      document.getElementById("dandelion-container").appendChild(d);
+<script>
+  // Dandelion effect on logo click
+  document.querySelector(".logo").addEventListener("click", triggerEasterEgg);
 
-      setTimeout(() => {
-        d.remove();
-      }, 7000);
+  function triggerEasterEgg() {
+    // Prevent multiple triggers
+    if (document.querySelector(".dandelion-active")) return;
+
+    // Play soft sound (optional)
+    const audio = new Audio("https://cdn.pixabay.com/download/audio/2023/06/28/audio_4e612ac928.mp3?filename=whispers-146147.mp3");
+    audio.volume = 0.3;
+    audio.play();
+
+    // Create floating dandelions
+    for (let i = 0; i < 20; i++) {
+      const dandelion = document.createElement("div");
+      dandelion.className = "dandelion dandelion-active";
+      dandelion.style.left = Math.random() * 100 + "vw";
+      dandelion.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      document.body.appendChild(dandelion);
+
+      setTimeout(() => dandelion.remove(), 10000); // remove after animation
     }
   }
-});
+</script>
 
-  </script>
 
   <script>
     document.querySelectorAll(".image-carousel").forEach(carousel => {
