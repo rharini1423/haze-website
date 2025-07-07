@@ -148,9 +148,10 @@
   </div>
 </section>
 
+<div id="dandelion-container"></div>
 
   <footer>
-    <p>© 2025 H'aze. For the Ones Who Get It.</p>
+    <p>© 2025 H'aze. For the Ones Who Get It.<span style="opacity:0.2;">(Press H)</span></p>
   </footer>
 
   <!-- ✅ JavaScript Carousel Logic -->
@@ -171,6 +172,26 @@
       });
       toggleSidebar(); // close after click
     }
+  </script>
+  <script>
+    document.addEventListener("keydown", function (e) {
+  if (e.key.toLowerCase() === "h") {
+    for (let i = 0; i < 12; i++) {
+      const d = document.createElement("div");
+      d.classList.add("dandelion");
+      d.innerText = "🌬️"; // You can also try ❃ or 🕊️ or a custom SVG
+      d.style.left = Math.random() * 100 + "vw";
+      d.style.fontSize = 1.2 + Math.random() * 2 + "rem";
+      d.style.animationDuration = 4 + Math.random() * 3 + "s";
+      document.getElementById("dandelion-container").appendChild(d);
+
+      setTimeout(() => {
+        d.remove();
+      }, 7000);
+    }
+  }
+});
+
   </script>
 
   <script>
