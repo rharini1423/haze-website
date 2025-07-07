@@ -20,6 +20,18 @@
 
 
   </header>
+  <!-- Sidebar Toggle Button -->
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="#" onclick="filterProducts('all')">All</a>
+      <a href="#" onclick="filterProducts('oversized')">Oversized Tees</a>
+      <a href="#" onclick="filterProducts('crop')">Crop Tops</a>
+      <a href="#" onclick="filterProducts('hoodie')">Hoodies</a>
+      <a href="#" onclick="filterProducts('tote')">Tote Bags</a>
+    </div>
+
 
   <main class="grid">
     <!-- ✅ Gear 5 Luffy -->
@@ -85,14 +97,82 @@
       <h2>Faith</h2>
       <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
     </div>
+    <div class="card oversized">
+      <div class="image-carousel" data-index="0">
+        <button class="carousel-btn left">&#8592;</button>
+        <img src="assests\luffy1.png" alt="Faith - View 1" class="carousel-img active">
+        <button class="carousel-btn right">&#8594;</button>
+      </div>
+      <h2>Gear 5 </h2>
+      <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
+  <!-- Gear 5 Luffy oversized tee -->
+</div>
+<div class="card oversized">
+  <!-- Gear 5 Luffy oversized tee -->
+</div>
+
+<div class="card crop">
+  <div class="image-carousel" data-index="0">
+        <button class="carousel-btn left">&#8592;</button>
+        <img src="assests\valentines2.png" alt="Faith - View 1" class="carousel-img active">
+        <!-- <img src="assests\faith3.png" alt="Faith - View 2" class="carousel-img">
+        <img src="assests\faith2.jpeg" alt="Faith - View 3" class="carousel-img"> -->
+        <button class="carousel-btn right">&#8594;</button>
+      </div>
+      <h2>Furever love </h2>
+      <a href="https://instagram.com/h.aze.in" target="_blank" class="dm-btn">DM to Order</a>
+  <!-- Gear 5 Luffy oversized tee -->
+</div>
+
+<div class="card hoodie">
+  <!-- Hoodie design -->
+</div>
+
+<div class="card tote">
+  <!-- Tote bag design -->
+</div>
+
+
 
   </main>
+
+  <section class="lookbook">
+  <h2>As Seen On Our Community</h2>
+  <div class="lookbook-scroll">
+    <div class="lookbook-img"><img src="assests\faith2.jpeg" alt="Customer 1"></div>
+    <div class="lookbook-img"><img src="assets/look2.jpg" alt="Customer 2"></div>
+    <!-- <div class="lookbook-img"><img src="assets/look3.jpg" alt="Customer 3"></div>
+    <div class="lookbook-img"><img src="assets/look4.jpg" alt="Customer 4"></div>
+    <div class="lookbook-img"><img src="assets/look5.jpg" alt="Customer 5"></div> -->
+    <!-- Add more as needed -->
+  </div>
+</section>
+
 
   <footer>
     <p>© 2025 H'aze. For the Ones Who Get It.</p>
   </footer>
 
   <!-- ✅ JavaScript Carousel Logic -->
+    <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+    }
+
+    function filterProducts(category) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      toggleSidebar(); // close after click
+    }
+  </script>
+
   <script>
     document.querySelectorAll(".image-carousel").forEach(carousel => {
       const imgs = carousel.querySelectorAll(".carousel-img");
@@ -132,6 +212,7 @@
         loop: true
       });
   </script>
+
 
 </body>
 </html>

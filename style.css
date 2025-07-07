@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'League Spartan', sans-serif;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(50,50,50,0.8));
+  background: linear-gradient(135deg, #1b1b1b, #2c2c2c);
   color: #fff;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -14,20 +14,23 @@ h1, h2, header p {
 }
 
 header img {
-  margin-bottom: 0.5rem;  /* reduce logo's bottom space */
+  margin-bottom: 0.5rem;  
 }
 
 h2 {
-  margin-top: 0;          /* remove top gap for "Creative Streetwear" */
+  margin-top: 0;          
 }
 
 
 .tagline {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #ffffff;
   margin-top: 0.5rem;
   font-family: 'League Spartan', sans-serif;
+  text-align: center;
+  margin-bottom: 1rem; /* optional for spacing below */
 }
+
 
 
 
@@ -121,6 +124,102 @@ header p {
   background: white;
   color: black;
 }
+
+.lookbook {
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lookbook h2 {
+  font-size: 1.5rem;
+  font-family: 'League Spartan', sans-serif;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.lookbook-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.lookbook-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.lookbook-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+.lookbook-img {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.lookbook-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lookbook-scroll {
+  scroll-behavior: smooth;
+}
+
+
+/* Hamburger Button */
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 1rem 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: #ccc;
+}
+
+
 
 /* Footer */
 footer {
